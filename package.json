@@ -1,0 +1,28 @@
+{
+  "name": "vaulticons-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo for the VaultIcons icon library and documentation site.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @vaulticons/docs",
+    "build": "npm run build -w @vaulticons/core",
+    "build:docs": "npm run build -w @vaulticons/docs"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "fintech",
+    "crypto",
+    "svg",
+    "typescript"
+  ],
+  "author": "Ayomide Ibiteye",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

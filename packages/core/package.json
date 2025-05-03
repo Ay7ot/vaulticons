@@ -1,0 +1,88 @@
+{
+  "name": "@vaulticons/core",
+  "version": "0.0.1",
+  "description": "Core icon library for fintech and crypto applications, built with React and TypeScript.",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./icons/*": {
+      "import": {
+        "types": "./dist/types/icons/*.d.ts",
+        "default": "./dist/esm/icons/*.js"
+      },
+      "require": {
+        "types": "./dist/types/icons/*.d.ts",
+        "default": "./dist/cjs/icons/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "icons"
+  ],
+  "scripts": {
+    "generate:icons": "svgr --icon --typescript --ext tsx --no-index --no-dimensions --replace-attr-values \"#000=currentColor\" --out-dir src/icons -- svgs",
+    "generate:index": "node ../../scripts/generate-icon-index.js",
+    "build": "npm run generate:icons && npm run generate:index && rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "echo \"Lint script not implemented yet\" && exit 0",
+    "test": "echo \"Test script not implemented yet\" && exit 0",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/rollup": "^8.1.0",
+    "@types/node": "^22.15.3",
+    "postcss": "^8.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.40.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "react",
+    "icons",
+    "fintech",
+    "crypto",
+    "svg",
+    "typescript",
+    "vaulticons"
+  ],
+  "author": "Ayomide Ibiteye",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ay7ot/vaulticons.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/Ay7ot/vaulticons/issues"
+  },
+  "homepage": "https://github.com/Ay7ot/vaulticons/tree/main/packages/core#readme"
+}
