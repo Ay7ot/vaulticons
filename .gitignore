@@ -26,7 +26,7 @@ pids
 *.pid.lock
 
 # Rollup cache
-.rollup.cache/
+**/rollup.cache/
 
 
 # Coverage directory
