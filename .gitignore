@@ -25,6 +25,10 @@ pids
 *.seed
 *.pid.lock
 
+# Rollup cache
+.rollup.cache/
+
+
 # Coverage directory
 coverage/
 *.lcov
